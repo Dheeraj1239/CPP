@@ -15,11 +15,12 @@ private:
 
 public:
     Vehicle()=default;
+
     Vehicle(
         std::string _vehicleId,
         int _vehicleRegisteration,
         VehicleType _vehicleType,
-        Insurance* vehicleInsurancePlan);
+        Insurance* _vehicleInsurancePlan);
     
     ~Vehicle() {
         std::cout <<"Vehilce " << _vehicleId << "destroyed"<<std::endl;
@@ -32,6 +33,13 @@ public:
     VehicleType vehicleType() const { return _vehicleType; }
 
     Insurance* vehicleInsurancePlan() const { return _vehicleInsurancePlan; }
+
+    friend std::ostream &operator<<(std::ostream &os, const Vehicle &rhs);
+
+    
+
 };
+
+std::string DisplayEnum(VehicleType vtype);
 
 #endif // VEHICLE_H

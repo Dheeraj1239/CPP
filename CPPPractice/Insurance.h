@@ -26,6 +26,11 @@ public:
     float getInsuranceAmount() const { return _insuranceAmount; }
 
     InsuranceType insuranceType() const { return _insuranceType; }
+
+    friend std::ostream &operator<<(std::ostream &os, const Insurance &rhs);
+
 };
+
+std::string DisplayEnum(InsuranceType itype);
 
 #endif // INSURANCE_H

@@ -2,8 +2,7 @@
 #define INSURANCETYPE_H
 
 enum class InsuranceType{
-    ZERO,
-    DEBT,
+    ZERO_DEBT,
     REGULAR
 };
 

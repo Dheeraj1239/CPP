@@ -21,11 +21,22 @@ public:
         std::string vehicleId,
         int vehicleRegisteration,
         VehicleType vehicleType,
-        Insurance vehicleInsurancePlan,
+        Insurance* vehicleInsurancePlan,
         CarType _carType,
         float _carPrice,
         std::string _carColor);
     ~Car() {}
+
+    CarType carType() const { return _carType; }
+
+    float carPrice() const { return _carPrice; }
+
+    std::string carColor() const { return _carColor; }
+
+    friend std::ostream &operator<<(std::ostream &os, const Car &rhs);
+    
 };
+
+std::string DisplayEnum(CarType ctype);
 
 #endif // CAR_H
