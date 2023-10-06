@@ -6,7 +6,7 @@ class Card
 private:
     
 public:
-    Card(/* args */) {}
+    Card() {}
     ~Card() {}
 };
 
