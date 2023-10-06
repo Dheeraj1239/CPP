@@ -13,7 +13,7 @@ Create a class Debit Card with attributes
         (_limit/10) * annual_charge is ISSUER is RUPAY
 
 
-Create a class CerditCard with attributes
+Create a class CerditCard with attributes|
     -_limit which is an integre value.
     -An overriden ClaculateTaxOnCharge implementation which return (_limits/100) * _annual_charge
 

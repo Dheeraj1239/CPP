@@ -1,12 +1,12 @@
 #include <iostream>
 
-
 // compile time polymorphism
-template<typename T>
-
-void display(T arr[3]){
-    for(int i=0;i<3;i++){
-        std::cout<< "Address : "<<arr[i]<<std::endl;
+template <typename T>
+void display(T arr[3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        std::cout << "Address : " << arr[i] << std::endl;
     }
 }
 
@@ -33,19 +33,20 @@ public:
     ~Employee() {}
 };
 
+int main()
+{
 
-int main(){
+    Car *car[3];
+    Employee *emp[3];
 
-    Car* car[3];
-    Employee* emp[3];
-
-    for(int i=0;i<3;i++){
-        emp[i] = new Employee(); 
+    for (int i = 0; i < 3; i++)
+    {
+        emp[i] = new Employee();
         car[i] = new Car();
     }
 
-    display(car);  //display<Car*>(car)  older versions
-    display(emp);  //display<Emp*>(emp)  older versions
+    display(car); // display<Car*>(car)  older versions
+    display(emp); // display<Emp*>(emp)  older versions
 
     // fun(10);
     return 0;

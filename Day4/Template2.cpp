@@ -25,6 +25,8 @@ public:
         std::cout << "Employee with Id :" << _id << "is destroyed"<< std::endl;
     }
 
+    T skills() const { return _skills; }
+
     // we cannot use same symbol (friend function symbol and class must be different)
     template <typename A>
     friend std::ostream &operator<<(std::ostream &os, const Employee<A> &rhs) {
