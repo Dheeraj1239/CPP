@@ -44,7 +44,6 @@ public:
     {
         os 
            << static_cast<const Vehicle &>(rhs)
-           << "_carType"<<rhs._carType
            << " _carPrice: " << rhs._carPrice
            << " _carColor: " << rhs._carColor;
         return os;
