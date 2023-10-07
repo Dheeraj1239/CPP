@@ -7,6 +7,7 @@
 #include "DebitCardType.h"
 #include <iostream>
 #include <list>
+#include <limits.h>
 #include "NoMatchingCard.h"
 #define SIZE 5
 
@@ -37,6 +38,7 @@ Card** CreditCardWithMatchingIssuer(Card *card[5], CardType cardType)
 {
     // std::list<Card *> ls;
     static Card* res[5];
+    // int k = INT_MIN;
     int k = 0;
     if (!checkNull(card))
     {
