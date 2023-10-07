@@ -42,8 +42,7 @@ public:
     template <typename A>
     friend std::ostream &operator<<(std::ostream &os, const Car<A> &rhs)
     {
-        os 
-           << static_cast<const Vehicle &>(rhs)
+        os << static_cast<const Vehicle &>(rhs)
            << " _carPrice: " << rhs._carPrice
            << " _carColor: " << rhs._carColor;
         return os;
