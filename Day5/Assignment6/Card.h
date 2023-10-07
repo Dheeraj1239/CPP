@@ -19,8 +19,7 @@ public:
         int _cvv_number,
         CardType ctype,
         float _annual_charge,
-        int _limit
-    ) ;
+        int _limit);
     ~Card() {}
 
     virtual float CalculateTaxOnCharge() = 0;
