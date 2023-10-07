@@ -6,17 +6,17 @@
 #include "Car.h"
 #include "VehicleType.h"
 
-bool CheckNull(Car *cars[SIZE]);
+bool CheckNull(Car<float> *cars[SIZE]);
 
-void createCars(Car* cars[SIZE]);
+void createCars(Car<float>* cars[SIZE]);
 
-Car **getListOfCarInstances(Car *cars[SIZE], float thresh);
+Car<float> **getListOfCarInstances(Car<float> *cars[SIZE], float thresh);
 
-int* getCarPrice(Car *cars[SIZE], VehicleType vtype);
+int* getCarPrice(Car<float> *cars[SIZE], VehicleType vtype);
 
-std::string *getCarColor(Car *cars[SIZE], VehicleType vtype);
+std::string *getCarColor(Car<float> *cars[SIZE], VehicleType vtype);
 
 
-float AvgOfInsuranceAmount(Car* cars[SIZE]);
+float AvgOfInsuranceAmount(Car<float>* cars[SIZE]);
 
 #endif // FUN_H

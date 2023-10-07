@@ -4,7 +4,7 @@
 #include "VehicleType.h"
 #include "Fun.h"
 
-bool CheckNull(Car *cars[SIZE])
+bool CheckNull(Car<float> *cars[SIZE])
 {
     for (int i = 0; i < SIZE; i++)
     {
@@ -17,16 +17,16 @@ bool CheckNull(Car *cars[SIZE])
     return true;
 }
 
-void createCars(Car *cars[SIZE])
+void createCars(Car<float> *cars[SIZE])
 {
-    cars[0] = new Car("v1", 1234, VehicleType::PRIVATE, new Insurance("i1", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290, "blue");
-    cars[1] = new Car("v2", 1234, VehicleType::PRIVATE, new Insurance("i2", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290, "blue");
-    cars[2] = new Car("v3", 1234, VehicleType::PRIVATE, new Insurance("i3", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290, "blue");
+    cars[0] = new Car<float>("v1", 1234, VehicleType::PRIVATE, new Insurance("i1", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290.0f, "blue");
+    cars[1] = new Car<float>("v2", 1234, VehicleType::PRIVATE, new Insurance("i2", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290.0f, "blue");
+    cars[2] = new Car<float>("v3", 1234, VehicleType::PRIVATE, new Insurance("i3", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290.0f, "blue");
 }
-Car **getListOfCarInstances(Car *cars[SIZE], float thresh)
+Car<float> **getListOfCarInstances(Car<float> *cars[SIZE], float thresh)
 {
 
-    static Car *resCars[SIZE] = {nullptr};
+    static Car<float> *resCars[SIZE] = {nullptr};
 
     if (CheckNull(cars))
     {
@@ -43,11 +43,12 @@ Car **getListOfCarInstances(Car *cars[SIZE], float thresh)
             }
         }
     }
-    if(resCars[0] == nullptr) throw std::runtime_error("No object Exists");
+    if (resCars[0] == nullptr)
+        throw std::runtime_error("No object Exists");
     return resCars;
 }
 
-int *getCarPrice(Car *cars[SIZE], VehicleType vtype)
+int *getCarPrice(Car<float> *cars[SIZE], VehicleType vtype)
 {
     static int res[SIZE] = {-1};
     int k = 0;
@@ -66,13 +67,14 @@ int *getCarPrice(Car *cars[SIZE], VehicleType vtype)
         }
     }
 
-    if(res[0] == -1){
+    if (res[0] == -1)
+    {
         throw std::runtime_error("No object Exists");
     }
     return res;
 }
 
-std::string *getCarColor(Car *cars[SIZE], VehicleType vtype)
+std::string *getCarColor(Car<float> *cars[SIZE], VehicleType vtype)
 {
 
     static std::string res[SIZE] = {""};
@@ -92,14 +94,15 @@ std::string *getCarColor(Car *cars[SIZE], VehicleType vtype)
         }
     }
 
-    if(res[0] == ""){
+    if (res[0] == "")
+    {
         throw std::runtime_error("No Object exists");
     }
 
     return res;
 }
 
-float AvgOfInsuranceAmount(Car *cars[SIZE])
+float AvgOfInsuranceAmount(Car<float> *cars[SIZE])
 {
 
     float res = 0.0f;

@@ -8,17 +8,17 @@
 int main()
 {
 
-    // Car *cars[SIZE]={nullptr};
+    Car<float> *cars[SIZE]={nullptr};
 
     try
     {
-        // createCars(cars);
+        createCars(cars);
 
-        // Car **res = getListOfCarInstances(cars, 1290);
-        // for (int i = 0; i < SIZE && res[i] != nullptr; i++)
-        // {
-        //     std::cout << *res[i] << std::endl;
-        // }
+        Car<float> **res = getListOfCarInstances(cars, 1234);
+        for (int i = 0; i < SIZE && res[i] != nullptr; i++)
+        {
+            std::cout << *res[i]<< std::endl;
+        }
 
 //----------------------------------------------------------------------------
         // int* carRes = getCarPrice(cars, VehicleType::COMMERCIAL);
@@ -42,5 +42,12 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
+   
+    // Car<float>* c1 = new Car<float>("v1", 1234, VehicleType::PRIVATE, new Insurance("i1", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290, "blue");
+    // Car<float>* c2 = new Car<float>("v1", 1234, VehicleType::PRIVATE, new Insurance("i1", 1290.0f, InsuranceType::ZERO_DEBT), CarType::HATCHBACK, 1290, "blue");
+     
+    // Car<float>* c = *c1 + c2;
+    // std::cout<<*c<<std::endl;
     return 0;
+
 }
